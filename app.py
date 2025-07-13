@@ -14,5 +14,3 @@ st.write('HI!!!!!!!!!!!1')
 
 st.selectbox('Seperator : ' , ['-' , '_' , ',' , '.'])
 
-st.write('Your Generated Memorable Password is : ' , a + str(b) + ' ' + str(upper) + ' ' + str(digits) + ' ' + str(sign))
-
