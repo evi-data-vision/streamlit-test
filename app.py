@@ -5,9 +5,9 @@ import pandas as pd
 st.write('HI!!!!!!!!!!!')
 
 """
-Author : Ehsan
-Date : 25/13/7
-Streamlit
+Author : Ehsan \n
+Date : 25/13/7 \n 
+Streamlit \n
 """
 
 st.title('Title!')
@@ -47,3 +47,8 @@ col3.write("I'm third!")
 col1.checkbox('check 1')
 col3.checkbox('check 3')
 col2.checkbox('check 2')
+
+col1.text_input('Write a text')
+col2.text_input('Write a text' , placeholder = 'text')
+col3.number_input('Write a number' , min_value = 0 , max_value = 1000 , placeholder = 17)
+col3.number_input('Number' , value = None , placeholder = 7 , format = '%.0f')
