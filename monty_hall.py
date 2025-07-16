@@ -21,15 +21,23 @@ def monty_hall_game(switch_choice) :
     #print(final_choice)
     #print(monty_hall[final_choice])
     return monty_hall[final_choice]
+def play(game_count) :
 
-win_count = 0
-game_count = 1000000
-for _ in range(game_count) :
-    if monty_hall_game(True) == 'car' :
-        win_count += 1
-print(f'win percentage with switch door : {win_count / game_count * 100}')
+    win_count_with_switch = 0
+    for _ in range(game_count) :
+        if monty_hall_game(True) == 'car' :
+            win_count_with_switch += 1
+    win_percent_with_switch = win_count_with_switch / game_count * 100
+    #print(f'win percentage with switch door : {win_percent_with_switch}')
 
-for _ in range(game_count) :
-    if monty_hall_game(False) == 'car' :
-        win_count += 1
-print(f'win percentage without switch door : {win_count / game_count * 100}')
+    win_count_without_switch = 0
+    for _ in range(game_count) :
+        if monty_hall_game(False) == 'car' :
+            win_count_without_switch += 1
+    win_percent_without_switch = win_count_without_switch / game_count * 100
+    #print(f'win percentage without switch door : {win_percent_without_switch}')
+
+    #return [win_count_with_switch , win_count_without_switch]
+    return win_percent_with_switch , win_percent_without_switch
+
+    

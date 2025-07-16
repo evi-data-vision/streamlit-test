@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import monty_hall   # a file in my repository
 
 st.write('HI!!!!!!!!!!!')
 
@@ -52,3 +52,17 @@ col1.text_input('Write a text')
 col2.text_input('Write a text' , placeholder = 'text')
 col3.number_input('Write a number' , min_value = 0 , max_value = 1000 , placeholder = 17)
 col3.number_input('Number' , value = None , placeholder = 7 , format = '%.0f')
+
+
+range_game = st.number_input('Number of game count' , min_value = 1 , max_value = 100000r , placeholder = 10)
+result = []
+for i in range(range_game) :
+    result.append(monty_hall.play(i + 1))
+result = pd.DataFrame(result)
+
+col11 , col22 = st.columns(2)
+col11.subheader('win % with switch')
+col22.subheader('win % without switch')
+
+col11.line_chart(result[0])
+col22.line_chart(result[1])
